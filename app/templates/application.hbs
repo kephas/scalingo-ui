@@ -1,7 +1,21 @@
 <div class="container">
-  <ul>
-	<li>{{#link-to 'index'}}Apps{{/link-to}}</li>
-  </ul>
+
+  {{#bs-navbar type='inverse' fluid=fluid as |navbar|}}
+    <div class="navbar-header">
+      {{#navbar.toggle}}
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      {{/navbar.toggle}}
+      {{#link-to "index" class="navbar-brand"}}Scalingo Test{{/link-to}}
+    </div>
+    {{#navbar.content}}
+      {{#navbar.nav as |nav|}}
+        {{#nav.item}}{{#link-to "index"}}Apps{{/link-to}}{{/nav.item}}
+      {{/navbar.nav}}
+    {{/navbar.content}}
+  {{/bs-navbar}}
 
   <h1>Scalingo</h1>
 
